@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background: black;
+    }
+    .row{
+        border-radius: 30px;
+    }
+    .btn1{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    .btn1:hover{
+        background: white;
+        border: 1px solid;
+        color: black;
+    }
+    .img-fluid{
+        background-size: contain;
+        padding-top: 50px;
+        padding-right: 30px;
+    }
+</style>
+{% endblock extra_head %}
+
+{% block content %}
+<section class='Form my-4 mx-5'>
+    <div class='container'>
+        <div class='row no-gutters'>
+            <div class='col-lg-5'>
+                <img src='https://mdbootstrap.com/img/Photos/Others/images/76.jpg' class='img-fluid' alt="">
+            </div>
+            <div class='col-lg-7'>
+                <h1 class="font-weight-bold py-3">Account</h1>
+                <h4>Sign Into Your Account</h4>
+                <form>
+                    <div class='form-row'>
+                        <div class='col-lg-7'>
+                            <input type="email" placeholder="Email-Address" class="form-control my-3 p-4">
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-lg-7'>
+                            <input type="password" placeholder="*******" class="form-control my-3 p-4">
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-lg-7'>
+                            <button type="button" class="btn1 mt-3">Login</button>
+                        </div>
+                    </div>
+                    <a href="#">Forgot password?</a>
+                    <p>Dont't have an account? <a href="/register">Register here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
