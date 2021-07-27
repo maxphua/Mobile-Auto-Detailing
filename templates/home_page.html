@@ -182,9 +182,12 @@
 
   <!--Section: Product-->
   <div class="container">
-    <h3 class="h3">Shop Vouchers </h3>
+    <h3 class="h3">Limited Time Discount Vouchers </h3>
+    <h3 class='h3'>Countdown Timer 00.00.00</h3>
     <div class="row">
+      {% for item in object_list %}
       <div class="col-md-3 col-sm-6">
+        
         <div class="product-grid">
           <div class="product-image">
             <a href="/product_one">
@@ -192,7 +195,7 @@
               <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg">
             </a>
             <ul class="social">
-              <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+              <li><a href="{{ item.get_absolute_url }}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
               <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
               <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
@@ -207,108 +210,20 @@
             <li class="fa fa-star disable"></li>
           </ul>
           <div class="product-content">
-            <h3 class="title"><a href="#">Premium Car Wash</a></h3>
-            <div class="price">$16.00
-              <span>$20.00</span>
+            <h3 class="title"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
+            <div class="price">RM
+              {% if item.discount_price %}
+              {{ item.discount_price }}
+              {% else %}
+              {{ item.price}}
+              {% endif %}
             </div>
             <a class="add-to-cart" href="">+ Add To Cart</a>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-grid">
-          <div class="product-image">
-            <a href="#">
-              <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-3.jpg">
-              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-4.jpg">
-            </a>
-            <ul class="social">
-              <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-              <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-            <span class="product-new-label">Sale</span>
-            <span class="product-discount-label">50%</span>
-          </div>
-          <ul class="rating">
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-          </ul>
-          <div class="product-content">
-            <h3 class="title"><a href="#">3-Layer Ceramic Coating</a></h3>
-            <div class="price">$5.00
-              <span>$10.00</span>
-            </div>
-            <a class="add-to-cart" href="">+ Add To Cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-grid">
-          <div class="product-image">
-            <a href="#">
-              <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-5.jpg">
-              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-6.jpg">
-            </a>
-            <ul class="social">
-              <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-              <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-            <span class="product-new-label">Sale</span>
-            <span class="product-discount-label">50%</span>
-          </div>
-          <ul class="rating">
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-          </ul>
-          <div class="product-content">
-            <h3 class="title"><a href="#">WindScreen Coating</a></h3>
-            <div class="price">$5.00
-              <span>$10.00</span>
-            </div>
-            <a class="add-to-cart" href="">+ Add To Cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-grid">
-          <div class="product-image">
-            <a href="#">
-              <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-7.jpg">
-              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-8.jpg">
-            </a>
-            <ul class="social">
-              <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-              <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-            <span class="product-new-label">Sale</span>
-            <span class="product-discount-label">50%</span>
-          </div>
-          <ul class="rating">
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-          </ul>
-          <div class="product-content">
-            <h3 class="title"><a href="#">3-Step Polishing</a></h3>
-            <div class="price">$5.00
-              <span>$10.00</span>
-            </div>
-            <a class="add-to-cart" href="">+ Add To Cart</a>
-          </div>
-        </div>
-      </div>
-    </div>
+        
+      </div>  
+      {% endfor %}
   </div>
   <hr>
   <!--Section: Product-->

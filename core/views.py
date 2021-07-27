@@ -1,17 +1,22 @@
+from core.models import Item
 from django.contrib import auth
 from django.http import response, HttpResponse
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic import ListView, DeleteView
+from .models import Item
 
 
-def home(request):
-    return render(request, 'home_page.html')
+class HomeView(ListView):
+    model = Item
+    template_name = 'home_page.html'
 
 
-def product_one(request):
-    return render(request, 'product/product1.html')
+class ProductDetailView(DeleteView):
+    model = Item
+    template_name = 'product/product1.html'
 
 
 def loginPage(request):
@@ -41,3 +46,11 @@ def register(request):
         form = RegisterForm()
     context = {"form": form}
     return render(request, "account/register.html", context)
+
+
+def add_to_cart(request):
+    pass
+    # if order query exist
+    # if item exist in order query, add quatity
+    # else add item to order query
+    # else create new order query for user
