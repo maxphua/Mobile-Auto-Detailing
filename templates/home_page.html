@@ -211,11 +211,14 @@
           </ul>
           <div class="product-content">
             <h3 class="title"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
-            <div class="price">RM
+            <div class="lead">RM
               {% if item.discount_price %}
-              {{ item.discount_price }}
+              <span class="mr-1">
+                <del>{{ item.price }}</del>
+                {{ item.discount_price }}
+              </span>             
               {% else %}
-              {{ item.price}}
+              <span>{{ item.price }}</span>
               {% endif %}
             </div>
             <a class="add-to-cart" href="">+ Add To Cart</a>

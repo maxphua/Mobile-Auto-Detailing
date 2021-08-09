@@ -235,7 +235,7 @@
                             <nav class="" role="navigation" aria-label="breadcrumbs">
                                 <ul class="breadcrumb-list">
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="#">Shop</a><span>Product one</span>
+                                    <li><a href="#">Shop</a><span>{{ item.title }}</span>
                                     </li>
                                 </ul>
                             </nav>
@@ -308,14 +308,14 @@
                                     <input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8"
                                         value="✓" />
                                     <div class="product-details">
-                                        <h1 class="single-product-name">Product one</h1>
+                                        <h1 class="single-product-name">{{ item.title }}</h1>
                                         <div class="single-product-reviews">
                                             <span class="shopify-product-reviews-badge" data-id="1912078270534"></span>
                                         </div>
                                         <div class="product-sku">SKU: <span class="variant-sku">YQT71020193</span></div>
                                         <div class="single-product-price">
                                             <div class="product-discount"><span class="price" id="ProductPrice"><span
-                                                        class=money>$20.66</span></span></div>
+                                                        class=money>RM{{ item.price }}</span></span></div>
                                         </div>
                                         <div class="product-info">Lorem Ipsum is simply dummy text of the printing and
                                             typesetting industry. Lorem Ipsum has been the industry's standard dummy text
@@ -326,18 +326,7 @@
                                             containing Lorem Ipsum passages, and more recently with desktop publishing
                                             software like Aldus PageMaker including versions of Lorem Ipsum.</div>
     
-                                        <div class="single-product-action">
-                                            <div class="product-variant-option">
-                                                <select name="id" id="productSelect" class="product-single__variants"
-                                                    style="display:none;">
-                                                    <option selected="selected" data-sku="YQT71020193"
-                                                        value="19506517377094">Default Title - <span class=money>$20.66
-                                                            USD</span></option>
-    
-                                                </select>
-                                                
-                                            </div>
-                                            
+                                        <div class="single-product-action">                                            
                                             <div class="product-add-to-cart">
                                                 <span class="control-label">Quantity</span>
                                                 <div class="cart-plus-minus">
@@ -345,13 +334,14 @@
                                                         value="1">
                                                 </div>
                                                 <div class="add">
-                                                    <button type="submit" class="add-to-cart ajax-spin-cart" id="AddToCart">
+                                                    <a href="{{ object.get_add_to_cart_url }}" class="add-to-cart ajax-spin-cart" >
                                                         <i class="ion-bag"></i>
-                                                        <span class="list-cart-title cart-title" id="AddToCartText">Add to
-                                                            cart</span>
-                                                    </button>
-                                                    
-    
+                                                        <span class="list-cart-title cart-title" >Add to cart</span> 
+                                                    </a>
+                                                    <a href="{{ object.get_remove_from_cart_url }}" class="add-to-cart ajax-spin-cart">
+                                                        <i class="ion-bag"></i>
+                                                        <span class="list-cart-title cart-title">Remove from cart</span>
+                                                    </a>
                                                     <div class="single-product-wishlist">
                                                         <a class="add-to-cart action-wishlist wishlist" href="#"
                                                             title="Wishlist"><i class="fa fa-heart"></i></a>

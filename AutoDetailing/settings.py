@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'compressor',
 
     'crispy_forms',
+
+    'django_countries'
 ]
 
 MIDDLEWARE = [
