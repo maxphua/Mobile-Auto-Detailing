@@ -1,1 +1,1 @@
-web: gunicorn AutoDetailing.wsgi --log-file-
+web: gunicorn AutoDetailing.wsgi --log-file -
