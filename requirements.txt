@@ -1,4 +1,5 @@
 asgiref==3.3.1
+autopep8==1.5.7
 beautifulsoup4==4.9.3
 certifi==2020.12.5
 cffi==1.14.5
@@ -6,14 +7,18 @@ chardet==4.0.0
 cryptography==3.4.6
 defusedxml==0.6.0
 Django==3.1.7
-django-allauth==0.45.0
+django-allauth==0.44.0
 django-appconf==1.0.4
 django-compressor==2.4.1
+django-countries==7.2.1
+django-crispy-forms==1.12.0
 django-libsass==0.8
 django-livereload-server==0.3.2
+gunicorn==20.1.0
 idna==2.10
 libsass==0.21.0
 oauthlib==3.1.0
+pycodestyle==2.7.0
 pycparser==2.20
 PyJWT==2.0.1
 python3-openid==3.2.0
@@ -26,6 +31,8 @@ rjsmin==1.1.0
 six==1.16.0
 soupsieve==2.2.1
 sqlparse==0.4.1
+toml==0.10.2
 tornado==6.1
 urllib3==1.26.3
-autopep8== 1.5.7
+whitenoise==5.3.0
+django-crispy-forms==1.12.0
