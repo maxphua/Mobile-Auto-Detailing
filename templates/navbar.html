@@ -1,66 +1,126 @@
+{% block extra_head %}
+<style>
+  /* Color of the links BEFORE scroll */
+      .navbar-scroll .nav-link,
+      .navbar-scroll .navbar-toggler-icon,
+      .navbar-scroll .navbar-brand {
+        color: #fff;
+      }
+
+      /* Color of the links AFTER scroll */
+      .navbar-scrolled .nav-link,
+      .navbar-scrolled .navbar-toggler-icon,
+      .navbar-scrolled .navbar-brand {
+        color: #fff;
+      }
+
+      /* Color of the navbar AFTER scroll */
+      .navbar-scroll,
+      .navbar-scrolled {
+        background-color: #cbbcb1;
+      }
+
+      .mask-custom {
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, .15);
+      }
+
+      .navbar-brand {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+      }
+      .navbar{
+        background-color: black;
+      }
+      .navbar .navbar-nav  .nav-item .nav-link{
+        color: white;
+        font-size: 20px;
+        font-weight: 400;       
+      }
+      .navbar .navbar-nav .nav-item .nav-link:hover{
+        background: transparent;
+        color: #5e9693;
+      }
+      /*line on text hover */
+      .navbar .navbar-nav .nav-link::after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: transparent;
+        transition: width 0.3s ease; background-color: 0.3s ease ;
+      }
+      .navbar .navbar-nav .nav-link:hover::after{
+        width: 100%;
+        background: white;
+        color: #fff;
+      }
+      .navbar .navbar-nav .nav-link-right{
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      
+</style>
+
+{% endblock %}
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+<nav class="navbar navbar-expand-lg  navbar-dark fixed-top mask-custom shadow-0" style="z-index: 2000;">
   <div class="container-fluid">
-    <!-- Navbar brand -->
-    <a class="navbar-brand nav-link" target="_blank" href="/">
-      <strong>MobileAutoDetailing</strong>
-    </a>
-    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-      aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/"><span style="color: #5e9693;">Mobile</span><span
+        style="color: #fff;">AutoDetailing</span></a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
       <i class="fas fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarExample01">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" aria-current="page" href="{% url 'core:about_us' %}">About Us</a>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link ml-3" href="/our_service" rel="nofollow" target="_blank">Our Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/our_service" rel="nofollow"
-            target="_blank">Our Services</a>
+          <a class="nav-link ml-3" href="{% url 'core:after_care' %}" target="_blank">After Care</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:after_care' %}" target="_blank">After Care</a>
+          <a class="nav-link ml-3" href="{% url 'core:our_work' %}" target="_blank">Our Work</a>
         </li>
+        <!--add shop here-->
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:our_work' %}" target="_blank">Our Work</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:shop' %}" target="_blank">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:contact' %}" target="_blank">Contact</a>
+          <a class="nav-link ml-3" href="{% url 'core:contact' %}" target="_blank">Contact</a>
         </li>
       </ul>
 
-      <ul class="navbar-nav list-inline">
-        {% if request.user.is_authenticated %}
-        <!-- Icons -->
-        <li class="">
-          <a class="nav-link" href='/order_summary' rel="nofollow" target="_blank">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </li>
-        <li class="">
-          <a class="nav-link" href="{% url 'account_logout' %}">
-            <span class="badge red z-depth-1 mr-1"> Hello, {{ request.user }} </span>
-            <i class="">Logout</i>
-          </a>
-        </li>
-        {% else %}
-        <li class="">
-          <a class="nav-link" href='/order_summary' rel="nofollow" target="_blank">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </li>
-        <li class="">
-          <a class="nav-link" href="/login" >
-            <i class="">Sign In</i>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
+      <div>
+        <ul class="navbar-nav list-inline">
+          {% if request.user.is_authenticated %}
+          <!-- Icons -->
+          <li class="">
+            <a class="nav-link-right" href='/order_summary' rel="nofollow" target="_blank">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="">
+            <a class="nav-link-right" href="{% url 'account_logout' %}">
+              <span class="badge red z-depth-1 mr-1"> Hello, {{ request.user }} </span>
+              <i class="nav-logout">Logout</i>
+            </a>
+          </li>
+          {% else %}
+          <li class="">
+            <a class="nav-link-right" href='/order_summary' rel="nofollow" target="_blank">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="">
+            <a class="nav-link-right"  href="/login">
+              <i class="" >Sign In</i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
-<!-- Navbar -->

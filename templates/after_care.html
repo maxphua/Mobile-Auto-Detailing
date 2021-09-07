@@ -1,13 +1,174 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+#aftercare {
+    background-image: url("{% static 'img/rob-walsh-Xn7YLHs8QNQ-unsplash.jpg' %}");        
+    height: 100vh;
+    background-size: cover;   
+    background-attachment: fixed;       
+}
+</style>
+{% endblock %}
 
 {% block content %}
+<!-- Background image -->
+<div id="aftercare" class="bg-image shadow-2-strong"></div>
 
-<h1 class="">After care</h1>
-<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloremque totam exercitationem dolor earum voluptatem
-    architecto impedit fuga. Aliquam incidunt totam unde magni quibusdam inventore ipsum autem veritatis dolor dolore?
-</h2>
-<h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, recusandae beatae provident fugiat distinctio
-    architecto nihil mollitia, delectus, nostrum laboriosam alias reiciendis harum voluptatibus a earum asperiores
-    quibusdam numquam sint?</h3>
+<div class="mask" style="background-color: rgba(0, 0, 0, 0);">
+    <div class="d-flex justify-content-start align-items-center h-100 p-5">
+        <div class="text-white text-start">
+            <h1 class="mb-3 display-1" style="font-size: 100px;"><strong>After Care</strong> </h1>
+            <h5 class="mb-4 fw-bold mx-2" style="font-size: 30px;">Professional Vehicle Detailing</h5>
+            <a class="btn btn-primary btn-lg m-2 mx-1 " href="/" role="button" rel="nofollow" target="_blank">Our
+                Services</a>
+            <a class="btn btn-info btn-lg m-2" href="/" target="_blank" role="button">Contact Us</a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Background image -->
 
+<!-- aftercare section -->
+<section>
+    
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-6 gx-5 mb-4 p-5">
+                <div class="bg-image hover-overlay ripple shadow-2-strong">
+                    <img src="{% static 'img/boris-m-_CiyeM2kvqs-unsplash.jpg' %}" class="img-fluid" alt="">
+                </div>              
+            </div>
+            <div class="col-md-6 gx-5 mb-4">
+                <div class="mt-5">
+                    <br>
+                    <br>
+                    <h1 class="text-center">Things not to do</h1>
+                    <br>
+                    <br>
+                    <div>
+                        <h2>Automatic car washes</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nobis laborum unde assumenda maxime dolore,
+                            doloribus ducimus laudantium repellendus culpa earum voluptate adipisci qui esse, blanditiis beatae. Commodi,
+                            reprehenderit voluptates?</p>
+                        <br>
+                        <br>
+                        <h2>Avoid Using Any Sort of Cotton Towels or Terry Cloths</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet.
+                            Officiis cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore
+                            cumque quam reiciendis eaque.</p>
+                        <br>
+                        <br>
+                        <h2>Do not allow your mechanic or dealership to wash your car</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet.
+                            Officiis
+                            cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                            reiciendis eaque.</p>
+                        <br>
+                        <br>
+                        <h2>Avoid Hand Car Washes (That are not detail shops)</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet.
+                            Officiis
+                            cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                            reiciendis eaque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: steelblue;">
+        <div class="row">
+            
+            <div class="col-md-6 gx-5 mb-4">
+                <div class="mt-5" style="color: white;">
+                    <br>
+                    <br>
+                    <h1 class="text-center">Things to do</h1>
+                    <br>
+                    <br>
+                    <div>
+                        <h2>Wash your car yourself</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nobis laborum unde assumenda maxime dolore,
+                            doloribus ducimus laudantium repellendus culpa earum voluptate adipisci qui esse, blanditiis beatae. Commodi,
+                            reprehenderit voluptates?</p>
+                        <br>
+                        <br>
+                        <h2>Call us for help selecting the right products</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet.
+                            Officiis cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore
+                            cumque quam reiciendis eaque.</p>
+                        <br>
+                        <br>
+                        <h2>Only use the highest quality microfiber towels</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet.
+                            Officiis
+                            cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                            reiciendis eaque.</p>
+                        <br>
+                        <br>
+                        <h2>Book an auto detailing job with Mobile Auto Detailing</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet.
+                            Officiis
+                            cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                            reiciendis eaque.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gx-5 mb-4 p-5">
+                <div class="bg-image hover-overlay ripple shadow-2-strong">                  
+                    <img src="{% static 'img/sanmeet-chahil-dveDkZQJVjQ-unsplash.jpg' %}" class="img-fluid"  alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="background-color: black;">
+    <div class="container p-5">
+        <div class="row">
+            <div class="aftercare-title text-center p-5"  style="color: white;">
+                <h1>How to clean your car after detailing</h1>
+                <h4>The tools you should be using to clean your car after a detail are going to make the biggest difference, not only will
+                they make your cleaning easier but also avoid the dreaded swirl marks.</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container" >
+        <div class="row" >
+            <div class="p-5" style="color: white;">
+                <h2>The best products to use to clean your car after detailing are:</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nobis laborum unde assumenda maxime dolore, doloribus ducimus laudantium repellendus culpa earum voluptate adipisci qui esse, blanditiis beatae. Commodi, reprehenderit voluptates?</p>
+                <br>
+                <br>
+                <h2>Clean The Wheels & Arches</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet. Officiis cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam reiciendis eaque.</p>
+                <br>
+                <br>
+                <h2>Main Wash</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet. Officiis
+                    cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                    reiciendis eaque.</p>
+                <br>
+                <br>
+                <h2>Dry Bodywork & Wheels</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet. Officiis
+                    cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                    reiciendis eaque.</p>
+                <br>
+                <br>
+                <h2>Use Quick Detailer</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet. Officiis
+                    cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                    reiciendis eaque.</p>
+                <br>
+                <br>
+                <h2>Finishing touches</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid necessitatibus minus cum deleniti amet. Officiis
+                    cum delectus beatae necessitatibus optio, perspiciatis praesentium ducimus aspernatur, ullam dolore cumque quam
+                    reiciendis eaque.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

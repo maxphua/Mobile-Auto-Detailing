@@ -1,13 +1,111 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+.contact{
+    background-image: url("{% static 'img/tom-podmore-3CksK6QSk2I-unsplash.jpg' %}");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed; 
+}
+.effect-1{
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
+.effect-1 ~.Focus-border{
+    position: absolute;
+    bottom: 0;
+    left: 50;
+    width: 0;
+    height: 2px;
+    background-color:brown;
+    transition: 0.4s;
+}
+.effect-1:focus ~.Focus-border{
+    width: 100%;
+    transition: 0.4s;
+    left: 0;
+}
+.btn1{
+    background-color: lightblue;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 145px;
+}
+</style>
+{% endblock %}
 
 {% block content %}
 
-<h1 class="">Our contact</h1>
-<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloremque totam exercitationem dolor earum voluptatem
-    architecto impedit fuga. Aliquam incidunt totam unde magni quibusdam inventore ipsum autem veritatis dolor dolore?
-</h2>
-<h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, recusandae beatae provident fugiat distinctio
-    architecto nihil mollitia, delectus, nostrum laboriosam alias reiciendis harum voluptatibus a earum asperiores
-    quibusdam numquam sint?</h3>
+<section class="contact p-5" >
+    <div class="d-flex justify-content-start align-items-center h-100">
+    <div class="container py-5 mt-5 " >
+        <div class="row" >
+            <div class="col-lg-6 mx-auto" >
+                <div class="card" >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="head text-center py-3">
+                                    <h1>Contact Us</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <form method="POST">
+                        {% csrf_token %}
+                        <div class="form p-3 my-5">
+                            <div class="form-row my-5 mt-1">
+                                <div class="col-lg-12">
+                                    <input class="effect-1" name="name" placeholder="Name" type="text">
+                                    <span class="Focus-border"></span>
+                                </div>                                                          
+                            </div>                          
+                            <div class="form-row pb-3 pt-2">
+                                <div class="col-lg-12">
+                                    <input class="effect-1" name="email" placeholder="Email" type="text">
+                                    <span class="Focus-border"></span>
+                                </div>
+                            </div>
+                            <div class="form-row pt-3">
+                                <div class="col-lg-12">
+                                    <input class="effect-1" name="phone" placeholder="Phone" type="text">
+                                    <span class="Focus-border"></span>
+                                </div>
+                            </div>
+                            <div class="form-row pt-5">
+                                <div class="col-lg-12">
+                                    
+                                    <textarea cols="30" rows="10" class="form-control" name="messages" placeholder="Your Message" type="text"></textarea>
+                                    <span class="Focus-border"></span>
+                                </div>
+                            </div>
+                            <div class="form-row pt-4">
+                                
+                                <div class="offset-4 col-lg-4">
+                                    <button type="submit" class="btn1">SEND MESSAGE</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
 
 {% endblock %}

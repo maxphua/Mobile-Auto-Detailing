@@ -2,370 +2,328 @@
 {% load static %}
 
 {% block extra_head %}
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <style>
-  h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
-  .product-grid{font-family:Raleway,sans-serif;text-align:center;padding:0 0 72px;border:1px solid rgba(0,0,0,.1);overflow:hidden;position:relative;z-index:1}
-  .product-grid .product-image{position:relative;transition:all .3s ease 0s}
-  .product-grid .product-image a{display:block}
-  .product-grid .product-image img{width:100%;height:auto}
-  .product-grid .pic-1{opacity:1;transition:all .3s ease-out 0s}
-  .product-grid:hover .pic-1{opacity:1}
-  .product-grid .pic-2{opacity:0;position:absolute;top:0;left:0;transition:all .3s ease-out 0s}
-  .product-grid:hover .pic-2{opacity:1}
-  .product-grid .social{width:150px;padding:0;margin:0;list-style:none;opacity:0;transform:translateY(-50%) translateX(-50%);position:absolute;top:60%;left:50%;z-index:1;transition:all .3s ease 0s}
-  .product-grid:hover .social{opacity:1;top:50%}
-  .product-grid .social li{display:inline-block}
-  .product-grid .social li a{color:#fff;background-color:#333;font-size:16px;line-height:40px;text-align:center;height:40px;width:40px;margin:0 2px;display:block;position:relative;transition:all .3s ease-in-out}
-  .product-grid .social li a:hover{color:#fff;background-color:#ef5777}
-  .product-grid .social li a:after,.product-grid .social li a:before{content:attr(data-tip);color:#fff;background-color:#000;font-size:12px;letter-spacing:1px;line-height:20px;padding:1px 5px;white-space:nowrap;opacity:0;transform:translateX(-50%);position:absolute;left:50%;top:-30px}
-  .product-grid .social li a:after{content:'';height:15px;width:15px;border-radius:0;transform:translateX(-50%) rotate(45deg);top:-20px;z-index:-1}
-  .product-grid .social li a:hover:after,.product-grid .social li a:hover:before{opacity:1}
-  .product-grid .product-discount-label,.product-grid .product-new-label{color:#fff;background-color:#ef5777;font-size:12px;text-transform:uppercase;padding:2px 7px;display:block;position:absolute;top:10px;left:0}
-  .product-grid .product-discount-label{background-color:#333;left:auto;right:0}
-  .product-grid .rating{color:#FFD200;font-size:12px;padding:12px 0 0;margin:0;list-style:none;position:relative;z-index:-1}
-  .product-grid .rating li.disable{color:rgba(0,0,0,.2)}
-  .product-grid .product-content{background-color:#fff;text-align:center;padding:12px 0;margin:0 auto;position:absolute;left:0;right:0;bottom:-27px;z-index:1;transition:all .3s}
-  .product-grid:hover .product-content{bottom:0}
-  .product-grid .title{font-size:13px;font-weight:400;letter-spacing:.5px;text-transform:capitalize;margin:0 0 10px;transition:all .3s ease 0s}
-  .product-grid .title a{color:#828282}
-  .product-grid .title a:hover,.product-grid:hover .title a{color:#ef5777}
-  .product-grid .price{color:#333;font-size:17px;font-family:Montserrat,sans-serif;font-weight:700;letter-spacing:.6px;margin-bottom:8px;text-align:center;transition:all .3s}
-  .product-grid .price span{color:#999;font-size:13px;font-weight:400;text-decoration:line-through;margin-left:3px;display:inline-block}
-  .product-grid .add-to-cart{color:#000;font-size:13px;font-weight:600}
-  @media only screen and (max-width:990px){.product-grid{margin-bottom:30px}
+/* about us section */
+
+  #intro {
+        background-image: url("{% static 'img/felipe-simo-ktltWUbd1lk-unsplash.jpg' %}");        
+        height: 100vh;
+        background-size: cover;   
+        background-attachment: fixed;       
   }
+
+  .about-title{
+    color: #5e9693;
+    font-size: 60px;
+  }
+
+/* services section */
+  #services{   
+    background-color: black;
+  }
+  #services h3{
+    font-size: 14px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+  } 
+  #services h1{
+    color: #5e9693;
+    font-size: 80px;
+  }
+
+/* our work section */
+  #project .project-item{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+  }
+  #project .project-item .project-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: all ease-in-out 0.4s;
+  }
+  #project .project-item:hover .project-overlay{
+    opacity: 1;
+  }
+  #project .project-item .project-overlay .project-info{
+    padding: 8em 0;
+  }
+  .project-info h1{
+    color: white;
+    margin: 0;
+  }
+  .project-info h3{
+    color: #d9d9d9;
+    margin-top: 0;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+  }
+  .project-item img{
+    transition: all ease-in-out 0.6s;
+  }
+  .project-item:hover img{
+    transform: scale(1.1);
+  }
+
 </style>
 {% endblock %}
 
 {% block content %}
-  <!-- Carousel wrapper -->
-  <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
-      <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
-      <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
-    </ol>
-
-    <!-- Inner -->
-    <div class="carousel-inner">
-      <!-- Single item -->
-      <div class="carousel-item active">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-          <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white text-center">
-              <h1 class="mb-3">Mobile Auto Detailing</h1>
-              <h5 class="mb-4">A Premium Service At Your Doorstep</h5>
-              <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-                role="button" rel="nofollow" target="_blank">Our Services</a>
-              <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-                target="_blank" role="button">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class="carousel-item">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
-          <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white text-center">
-              <h2>You can place here any content</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class="carousel-item">
-        <div class="mask" style="
-              background: linear-gradient(
-                45deg,
-                rgba(29, 236, 197, 0.7),
-                rgba(91, 14, 214, 0.7) 100%
-              );
-            ">
-          <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white text-center">
-              <h2>And cover it with any mask</h2>
-              <a class="btn btn-outline-light btn-lg m-2"
-                href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank" role="button">Learn
-                about masks</a>
-            </div>
-          </div>
-        </div>
+<!-- Background image -->
+<div id="intro" class="bg-image shadow-2-strong" ></div>
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0);">
+    <div class="d-flex justify-content-start align-items-center h-100 p-5">
+      <div class="text-white text-start">
+        <h1 class="mb-3 display-1" style="font-size: 100px;" ><strong>Mobile Auto Detailing</strong> </h1>
+        <h5 class="mb-4 fw-bold mx-2" style="font-size: 30px;">Professional Vehicle Detailing</h5>
+        <a class="btn btn-primary btn-lg m-2 mx-1" href="/" role="button"
+          rel="nofollow" target="_blank">Our Services</a>
+        <a class="btn btn-info btn-lg m-2" href="/" target="_blank"
+          role="button">Contact Us</a>
       </div>
     </div>
-    <!-- Inner -->
-
-    <!-- Controls -->
-    <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
-  <!-- Carousel wrapper -->
-<main class="mt-5">
-  <!--Main Navigation-->
-  <div class="container">
-  <!--Section: Content-->
+  
+</div>
+<!-- Background image -->
 
-    <hr class="my-5" />
-
-  <section>
-    <div class="row">
-      <div class="col-md-6 gx-5 mb-4">
-        <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-          <img src="{% static 'img/118817975_3334981509874669_770669014545500534_n.jpeg' %}" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-6 gx-5 mb-4">
-        <h4><strong>Who we are</strong></h4>
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-          eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-          sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
-        </p>
-        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-          nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-          alias, unde optio accusantium soluta, iusto molestiae adipisci et?
-        </p>
+<!--Section: About us-->
+<section>
+  <div class="container-fluid">
+    <div class="row py-5 my-5">
+      <div class="services-text text-center py-5 col-md-10 col-sm-12 mx-auto">
+        <h1 class="pb-3" >“Your satisfaction is our priority.” <h5>-MobileAutoDetailing</h5></h1>         
       </div>
     </div>
-  </section>
-
-  <hr class="my-5" />
-
-  <!--Section: Content-->
-  <section>
-    <div class="row">
-      
-      <div class="col-md-6 gx-5 mb-4">
-        <h4><strong></strong>At Your Doorstep</h4>
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-          eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-          sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
-        </p>
-        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-          nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-          alias, unde optio accusantium soluta, iusto molestiae adipisci et?
-        </p>
-      </div>
-      <div class="col-md-6 gx-5 mb-4">
-        <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-          <img src="{% static 'img/42168869_501113557066798_6181047406025506816_n.jpeg' %}" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--Section: Content-->
-
-  <hr class="my-5" />
-
-  <!--Section: Product-->
-  <div class="container">
-    <h3 class="h3">Limited Time Discount Vouchers </h3>
-    <h3 class='h3'>Countdown Timer 00.00.00</h3>
-    <div class="row">
-      {% for item in object_list %}
-      <div class="col-md-3 col-sm-6">
-        
-        <div class="product-grid">
-          <div class="product-image">
-            <a href="/product_one">
-              <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg" >
-              <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg">
-            </a>
-            <ul class="social">
-              <li><a href="{{ item.get_absolute_url }}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-              <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-              <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-            <span class="product-new-label">Sale</span>
-            <span class="product-discount-label">20%</span>
-          </div>
-          <ul class="rating">
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star"></li>
-            <li class="fa fa-star disable"></li>
-          </ul>
-          <div class="product-content">
-            <h3 class="title"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
-            <div class="lead">RM
-              {% if item.discount_price %}
-              <span class="mr-1">
-                <del>{{ item.price }}</del>
-                {{ item.discount_price }}
-              </span>             
-              {% else %}
-              <span>{{ item.price }}</span>
-              {% endif %}
-            </div>
-            <a class="add-to-cart" href="">+ Add To Cart</a>
-          </div>
-        </div>
-        
-      </div>  
-      {% endfor %}
   </div>
-  <hr>
-  <!--Section: Product-->
-
-  <hr class="my-5" />
-
-  <!--Section: Content-->
-  <section class="text-center">
-    <h4 class="mb-5"><strong>What we do</strong></h4>
-  <!--First row-->  
-    <div class="row">
-      <div class="col-lg-4 col-md-12 mb-4">
-        <div class="card">
-          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="{% static 'img/57504356_2223422871030544_6490556574874992640_n.jpeg' %}" class="img-fluid" />
-            <a href="#!">
-              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">3-Layer Ceramic Coating</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="{% static 'img/40774118_494353354409485_3943169591391289344_n.jpeg' %}" class="img-fluid" />
-            <a href="#!">
-              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">WindScreen Coating</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="{% static 'img/39962123_486578641853623_3759658579569672192_n.jpeg' %}" class="img-fluid" />
-            <a href="#!">
-              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">3-Step Polishing</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--Second row-->
+</section>
+<section class="about-us">
   <div class="row">
-    <div class="col-lg-4 col-md-12 mb-4">
-      <div class="card">
-        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-          <img src="{% static 'img/26166018_1612532352119602_3883108911531172301_n.jpeg' %}" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Engine Coating</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
-          </p>
-          <a href="#!" class="btn btn-primary">Learn More</a>
-        </div>
+    <div class="col-md-6 gx-5 mb-4">
+      <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+        <img src="{% static 'img/87775476_2854938131212345_8185328512140312576_n.jpeg' %}" class="img-fluid" />
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
       </div>
     </div>
-  
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card">
-        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-          <img src="{% static 'img/denin-lawley-YWl9W8iBiUk-unsplash.jpg' %}" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Head lamp and Tail lamp coating</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
-          </p>
-          <a href="#!" class="btn btn-primary">Learn More</a>
-        </div>
-      </div>
-    </div>
-  
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card">
-        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-          <img src="{% static 'img/pexels-tima-miroshnichenko-6872175.jpg' %}" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Rim Coating</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
-          </p>
-          <a href="#!" class="btn btn-primary">Learn More</a>
-        </div>
-      </div>
+
+    <div class="col-md-6 gx-5 mb-4">
+      <h2 class="about-title"><strong>About Us</strong></h2>
+      
+      <h3 class="text-muted mt-2">
+        We provide everythings a physical vehicle detailing business does with a lower price and in a more convenient way.<br> With over 15 years of experience with more than 5000 satisfied clients, We bring our high-quality detailing services at your doorstep.
+      </h3>
+      <h2 class="mt-5"><strong>Why choose us</strong></h2>
+      <h3 class="text-muted">
+        Save time – Since a detailer comes to you, there’s no waiting at a busy car wash.
+        <br>
+      </h3>
+      <h3 class="text-muted">
+        Save money – It’s able to provide a better value for your money, without large facility and workforce to support.
+        You’ll get a higher quality of service for a more affordable price.
+        <br>
+      </h3>
+      <h3 class="text-muted">
+        Schedule in advance – You can save up to 30% by scheduling your mobile detailing each month. With monthly packages, you
+        can count on your vehicle being clean every day and save bucks in the process.
+        <br>
+      </h3>
+      <h3 class="text-muted">
+        Work with a trusted professional – At a car wash, you never know who is working on your vehicle, and the quality can
+        vary each visit. With a detailing service, you can work with a trusted professional and be sure that your car will look
+        ideal after every visit.
+        <br>
+      </h3>
+      <h3 class="text-muted">
+        Comfort and convenience – To business people, comfort and convenience are probably the top benefits this service can
+        bring.
+        <br>
+      </h3>
+      <h3 class="text-muted">
+        Added durability – A service that you shouldn’t miss is waxing. It can protect your car’s paint from the ravages of
+        natural elements like UV rays, sand, stone chips, rain, snow, and so on.
+        <br>
+      </h3>
     </div>
   </div>
+</section>
+
+<!--Section: Services-->
+  <section id="services">
+    <div class="container">
+      <div class="row py-5 my-5">
+        <div class="services-text text-center py-5 col-md-10 col-sm-12 mx-auto">
+          <h3 class="pb-3" style="color: white;">Our Services</h3>
+          <h1>3-Layer Ceramic Coating</h1>         
+          <h1>3-Step Polishing</h1>
+          <h1>WindScreen Coating</h1>
+          <h1>Engine Coating</h1>
+          <h1>Headlight Restoration</h1>
+          <h1>Rim Coating</h1>
+          <h1>Interior Coating</h1>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary btn-lg">Learn more </button>
+        </div>
+      </div>
+    </div>
+    
   </section>
+  
+  <!--Section: End Services-->
+
+  <!--Section: Our work-->
+
+  <section id="project" style="background-color:rgba(251, 251, 251, 0.15);">
+    <div class="container py-5">
+      <div class="row ">
+        <div class="services-text text-center py-5 col-md-10 col-sm-12 mx-auto">
+          <h1 class="pb-3">Our Work <h5>-Mobile Auto Detailing</h5></h1>  
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid"  src="{% static 'img/39962123_486578641853623_3759658579569672192_n.jpeg' %}" alt="">
+              
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>BMW F10</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/60292315_2257712347601596_235938058401218560_n.jpeg' %}" alt="">       
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>Mercedes GLC250 </h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/59964321_2255853021120862_1937608005201690624_n.jpeg' %}" alt="">
+        
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>Jaguar</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/57272153_2221137051259126_1364817615985311744_n.jpeg' %}" alt="">
+        
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>MiniCooper Clubman</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/57504157_2223328011040030_8124600350339497984_n.jpeg' %}" alt="">
+        
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>Toyota Alphard</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/57550555_2223013384404826_1855127680882573312_n.jpeg' %}" alt="">
+        
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>Mercedes E200</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/29356918_1693769530662550_4462593010500108288_n.jpeg' %}" alt="">
+        
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>BMW F10</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 mb-5">
+          <div class="project-item">
+            <a href="/">
+              <img class="img-fluid" src="{% static 'img/39453728_1886696298036538_2217151062672932864_n.jpeg' %}" alt="">
+        
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h1>Range Rover</h1>
+                  <h3>3-Layer Ceramic Coating</h3>
+                  <a class="btn btn-primary btn-lg" href="/">Learn more</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
+  <!--Section: End our work-->
 
   <!--Section: Content-->
-
-  <hr class="my-5" />
-
-  <!--Section: Content-->
-  <section class="mb-5">
-    <h4 class="mb-5 text-center"><strong>Subscribe Now</strong></h4>
+  <section class="mb-5 p-5 mt-5">
+    <h1 class="mb-5 text-center"><strong>Subscribe Now</strong></h1>
 
     <div class="row d-flex justify-content-center">
       <div class="col-md-6">
@@ -392,19 +350,7 @@
             <label class="form-label" for="form3Example3">Email address</label>
           </div>
 
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <input type="password" id="form3Example4" class="form-control" />
-            <label class="form-label" for="form3Example4">Password</label>
-          </div>
-
-          <!-- Checkbox -->
-          <div class="form-check d-flex justify-content-center mb-4">
-            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" checked />
-            <label class="form-check-label" for="form2Example3">
-              Subscribe to our newsletter
-            </label>
-          </div>
+          
 
           <!-- Submit button -->
           <button type="submit" class="btn btn-primary btn-block mb-4">

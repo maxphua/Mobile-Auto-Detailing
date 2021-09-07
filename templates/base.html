@@ -2,65 +2,39 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{% block head_title %}Mobile Auto Detailing{% endblock %}</title>
-    {% block extra_head %}
-    {% endblock %}
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <style>
-      /* Carousel styling */
-      #introCarousel,
-      .carousel-inner,
-      .carousel-item,
-      .carousel-item.active {
-        height: 100vh;
-      }
-
-      .carousel-item:nth-child(1) {
-        background-image: url('{% static "img/enrico-mantegazza-XH1DTvS1qCQ-unsplash.jpg" %}');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-
-      .carousel-item:nth-child(2) {
-        background-image: url('{% static "img/40048659_486658281845659_3777245023242813440_n.jpeg" %}');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-
-      .carousel-item:nth-child(3) {
-        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{% block head_title %}Mobile Auto Detailing{% endblock %}</title>
+  {% block extra_head %}
+  {% endblock %}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+          font-family: 'Poppins', 'sans-serif';
+        }
+    
       /* Height for devices larger than 576px */
       @media (min-width: 992px) {
-        #introCarousel {
+        #intro {
           margin-top: -58.59px;
         }
-      }
-      .navbar .nav-link {
-        color: #fff !important;  
-        font-size: 18px;     
-      }
-      .navbar{
-        background-color: black;
-      }      
-    </style>
+      }     
+  </style>
 </head>
 
 <div class="">
@@ -80,9 +54,9 @@
 
 {% include "navbar.html" %}
 
-<body> 
+<body>
 
-  
+
   {% block content %}
   {% endblock content %}
 
@@ -91,6 +65,5 @@
   {% block extra_scripts %}
   {% endblock extra_scripts %}
 </body>
+
 </html>
-
-

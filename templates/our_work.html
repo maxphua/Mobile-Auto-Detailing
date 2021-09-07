@@ -1,13 +1,106 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+#work-page {
+    background-image: url("{% static 'img/goh-rhy-yan-y8CtjK0ej6A-unsplash.jpg' %}");        
+    height: 100vh;
+    background-size: cover;   
+    background-attachment: fixed;       
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#gallery .row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#gallery .row .column{
+    flex: 33.3%;
+    width: auto;
+    overflow: hidden;
+    padding: 0 4px;
+    height: 100%;
+} 
+#gallery .row .column img{
+    margin-top: 2%;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1) brightness(0.5);
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+#gallery .row .column img:hover{
+    filter: grayscale(0) brightness(1);
+}
+</style>
+{% endblock %}
 
 {% block content %}
+<!-- Background image -->
+<div id="work-page" class="bg-image shadow-2-strong"></div>
 
-<h1 class="">Our work</h1>
-<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloremque totam exercitationem dolor earum voluptatem
-    architecto impedit fuga. Aliquam incidunt totam unde magni quibusdam inventore ipsum autem veritatis dolor dolore?
-</h2>
-<h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, recusandae beatae provident fugiat distinctio
-    architecto nihil mollitia, delectus, nostrum laboriosam alias reiciendis harum voluptatibus a earum asperiores
-    quibusdam numquam sint?</h3>
+<div class="mask" style="background-color: rgba(0, 0, 0, 0);">
+    <div class="d-flex justify-content-start align-items-center h-100 p-5">
+        <div class="text-white text-start">
+            <h1 class="mb-3 display-1" style="font-size: 100px;"><strong>Our Work</strong> </h1>
+            <h5 class="mb-4 fw-bold mx-2" style="font-size: 30px;">Mobile Auto Detailing</h5>
+            <a class="btn btn-primary btn-lg m-2 mx-1 " href="/" role="button" rel="nofollow" target="_blank">Our
+                Services</a>
+            <a class="btn btn-info btn-lg m-2" href="/" target="_blank" role="button">Contact Us</a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Background image -->
+
+<!-- Work Gallery -->
+<section>
+    <div class="container py-5">
+        <div class="row py-5 my-5">
+            <div class="services-text text-center py-5 col-md-10 col-sm-12 mx-auto">
+                <h1 class="pb-3">“Our Work” <h5>-MobileAutoDetailing</h5>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="gallery">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="column">             
+                <img src="{% static 'img/57070886_2223423174363847_3641606687565021184_n.jpeg' %}" alt="">
+                <img src="{% static 'img/20246386_1468570483182457_4213389695187166827_n.jpeg' %}" alt="">
+                <img src="{% static 'img/26116011_1612532638786240_5582111133952866446_o.jpeg' %}" alt="">
+                <img src="{% static 'img/58755143_2231047243601440_8945058757369397248_n.jpeg' %}" alt="">
+                <img src="{% static 'img/60468635_2264228956949935_7511376666552172544_n.jpeg' %}" alt="">
+                <img src="{% static 'img/123623631_3507907495915402_5216113070472865127_n.jpeg' %}" alt="">
+            </div>
+            <div class="column">
+                <img src="{% static 'img/20246246_1468610936511745_7638993373351230923_n.jpeg' %}" alt="">
+                <img src="{% static 'img/26116243_1612532708786233_8156912546771960271_o.jpeg' %}" alt="">
+                <img src="{% static 'img/39543665_1886787064694128_1824783582317510656_n.jpeg' %}" alt="">
+                <img src="{% static 'img/57388271_2223499944356170_448729790719983616_n.jpeg' %}" alt="">
+                <img src="{% static 'img/59972115_2254250497947781_8191686451012829184_n.jpeg' %}" alt="">
+                <img src="{% static 'img/60412761_2266404093399088_1071221404046721024_n.jpeg' %}" alt="">
+                <img src="{% static 'img/123688406_3507907805915371_1112398995183140070_n.jpeg' %}" alt="">
+            </div>
+            <div class="column">
+                <img src="{% static 'img/39536120_1886908978015270_3611776013685489664_n.jpeg' %}" alt="">
+                <img src="{% static 'img/58113351_2219409438098554_1223259883365728256_n.jpeg' %}" alt="">
+                <img src="{% static 'img/57456835_2223423121030519_862536459326849024_n.jpeg' %}" alt="">
+                <img src="{% static 'img/58113407_2223565871016244_1423415272143847424_n.jpeg' %}" alt="">
+                <img src="{% static 'img/57536281_2223577191015112_1843283934901698560_n.jpeg' %}" alt="">
+                <img src="{% static 'img/59947496_2255852771120887_9129353205585543168_n.jpeg' %}" alt="">
+                <img src="{% static 'img/65769178_2345252185514278_1489351811935502336_n.jpeg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Work Gallery -->
 
 {% endblock %}

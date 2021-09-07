@@ -1,13 +1,170 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+#services-page {
+    background-image: url("{% static 'img/matt-antonioli-lPBKqQgVHbc-unsplash.jpg' %}");        
+    height: 100vh;
+    background-size: cover;   
+    background-attachment: fixed;       
+}
+</style>
+{% endblock %}
 
 {% block content %}
+<!-- Background image -->
+<div id="services-page" class="bg-image shadow-2-strong"></div>
 
-<h1 class="">Our Services</h1>
-<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloremque totam exercitationem dolor earum voluptatem
-    architecto impedit fuga. Aliquam incidunt totam unde magni quibusdam inventore ipsum autem veritatis dolor dolore?
-</h2>
-<h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, recusandae beatae provident fugiat distinctio
-    architecto nihil mollitia, delectus, nostrum laboriosam alias reiciendis harum voluptatibus a earum asperiores
-    quibusdam numquam sint?</h3>
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0);">
+        <div class="d-flex justify-content-start align-items-center h-100 p-5">
+            <div class="text-white text-start">
+                <h1 class="mb-3 display-1" style="font-size: 100px;"><strong>Our Services</strong> </h1>
+                <h5 class="mb-4 fw-bold mx-2" style="font-size: 30px;">Professional Vehicle Detailing</h5>
+                <a class="btn btn-primary btn-lg m-2 mx-1 " href="/" role="button" rel="nofollow" target="_blank">Our
+                    Services</a>
+                <a class="btn btn-info btn-lg m-2" href="/" target="_blank" role="button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Background image -->
 
+<!--Main layout-->
+<!--Section: Product-->
+
+<hr class="my-5" />
+
+<!--Section: Content-->
+<section class="text-center">
+    <h1 class="mb-5"><strong>Our Services</strong></h1>
+    <!--First row-->
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{% static 'img/57504356_2223422871030544_6490556574874992640_n.jpeg' %}"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">3-Layer Ceramic Coating</h5>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{% static 'img/40774118_494353354409485_3943169591391289344_n.jpeg' %}"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">WindScreen Coating</h5>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{% static 'img/39962123_486578641853623_3759658579569672192_n.jpeg' %}"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">3-Step Polishing</h5>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Second row-->
+<div class="row">
+    <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{% static 'img/26166018_1612532352119602_3883108911531172301_n.jpeg' %}" class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Engine Coating</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{% static 'img/denin-lawley-YWl9W8iBiUk-unsplash.jpg' %}" class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Head lamp and Tail lamp coating</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{% static 'img/pexels-tima-miroshnichenko-6872175.jpg' %}" class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Rim Coating</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!--Section: Content-->
+
+<!--Main layout-->
 {% endblock %}
+

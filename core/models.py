@@ -110,3 +110,13 @@ class Payment(models.Model):
     stripe_charge_id = models.CharField(max_length=50)
     amount = models.FloatField()
     timestamp = models.DateTimeField(auto_now_add=True)
+
+
+class Contact(models.Model):
+    contact_name = models.CharField(max_length=15)
+    contact_email = models.EmailField()
+    contact_phone = models.CharField(max_length=15)
+    messages = models.TextField()
+
+    def __str__(self):
+        return self.contact_name

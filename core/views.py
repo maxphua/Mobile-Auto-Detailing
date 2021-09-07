@@ -6,11 +6,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import response, HttpResponse
+from django.http import request, response, HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic.detail import DetailView
 from .forms import RegisterForm, CheckOutForm
-from .models import Item, OrderItem, Order, Address, Coupon
+from .models import Item, OrderItem, Order, Address, Coupon, Contact
 
 
 def is_valid_form(values):
@@ -295,3 +295,19 @@ class PaymentView(View):
             'order': order,
         }
         return render(self.request, 'checkout.html', context)
+
+
+def contact(request):
+    if request.method == "POST":
+        contactForm = Contact()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        messages = request.POST.get('messages')
+        contactForm.contact_name = name
+        contactForm.contact_email = email
+        contactForm.contact_phone = phone
+        contactForm.messages = messages
+        contactForm.save()
+        return HttpResponse('<h1> thanks for your response</h1>')
+    return render(request, 'contact.html')

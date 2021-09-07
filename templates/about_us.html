@@ -1,487 +1,197 @@
 {% extends 'base.html' %}
+{% load static %}
 
+<!--===================================================Styles==================================================================-->
 {% block extra_head %}
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
 <style>
-     .paddingTB60 {
-    padding-top:60px;
-    padding-bottom:60px;
-}
-.bgcolor-skyblue {
-    background:#eaf0f9;
-}
- 
- .image-aboutus-banner {
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/556962/pexels-photo-556962.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: #fff;
-    padding-top: 110px;
-    padding-bottom:110px;
- }
- 
-  .image-aboutus-sm-banner {
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/631008/pexels-photo-631008.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: #fff;
-    padding-top: 30px;
-    padding-bottom:30px;
- }
-.lg-text {
-    font-size:52px;
-    font-weight: 600;
-    text-transform: none;
-    color:#fff;
-}
-.image-aboutus-para {
-    color:#fff;
-}
+  /*Header area*/
+  header{width:100%; height:100vh; position:relative; overflow: hidden;}
+  header:after{content: '';position: absolute;width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0, 0, 0, 0.05);z-index: 25;}
+  .header-images{background-image: url("{% static 'img/felipe-simo-ktltWUbd1lk-unsplash.jpg' %}");background-attachment: fixed;
+  background-size: cover;background-position: center center;background-repeat: no-repeat;height: 100vh;width: 100%;filter:opacity(50%);  }
+  .header-title{position: absolute;z-index: 30;line-height: 3rem;top: calc(45% - 2rem);width: 100%;text-align: center;font-size: 8rem;    font-weight: 600;color:gainsboro;}
+  .header-small-title{position: absolute;z-index: 30;line-height: 3rem;top: calc(55% - 2rem);width: 100%;text-align: center;font-size: 3rem;
+  font-weight: 600;color: aliceblue;}
 
-/************************* */
-.plan {
-    background: #f9f9f9;
-    padding: 50px 30px;
-    margin-bottom: 30px;
-}
-.plan-header h4 {
-    padding-bottom: 8px;
-    text-transform: uppercase;
-    color: #333;
-    font-weight: 600;
-}
-.plan-header {
-    font-weight: 700;
-}
-.plan-header span {
-        color: #fe4819;
-        font-size: 40px;
-}
-.plan li {
-    padding-bottom: 15px;
-}
-.plan ul {
-    padding-left: 0;
-    margin-bottom: 15px;
-    list-style: none;
-}
-.plan-header p {
-    
-    padding-bottom: 15px;
-}
-
-.col-md-3,.col-md-4 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 0px;
-    padding-left: 0px;
-}
-
-.bg-pink {
-    background:#f0f0f0;
-}
-.bg-blue {
-    background:#d6d6d6;
-    color:#000;
-}
- .padding35 {
-    padding: 35px 0 35px;
-}
-
-
-/* Feature-CSS */
-
-.icon {
-    color : #fff;
-    padding:15px;
-    background:#323232 ;
-    font-size:50px;
-    border-radius:90px;
-    border:10px solid #323232 ;
-    
-}
-.feature-box {
-    text-align: center;
-    padding: 20px;
-    transition: .5s;
-    margin-bottom: 30px;
-    border: 1px solid #e8e8e8;
-}
-.feature-box:hover {
-   
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.feature-box h4 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 25px 0 15px;
-}
-
-/* Site Heading */
-.site-heading h3{
-    font-size : 40px;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-.border {
-    background: #e8e8e8 ;
-    height: 1px;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 45px;
-    float:left;
-}
-
-/* padding-margin */
-.paddingTB60 {
-    padding-top:60px;
-    padding-bottom:60px;
-}
-
-
-/* Carousel banner */
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color:#555;
-}
-.carousel img {
-  position: absolute;
-  top: 0;
-  left: 0;
- 
-}
-.carousel-caption {
-    margin-bottom:30px;
-}
-.carousel-caption h1 {
-    margin-bottom:15px;
-    font-size:42px;
-    font-weight:700px;
-}
-.carousel-caption p {
-    margin-bottom:20px;
-    font-size:16px;
-    font-weight:400px;
-}
-
-/* Footer */
-.footer {
-    position: relative;
-    background-color: #fff;
-    color: #707070;
-    padding: 55px 0 40px;
-}
-.footer h5 {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
-    color: #707070;
-    position: relative;
-    padding-bottom: 16px;
-}
-.footer h5:after {
-    content: '';
-    display: block;
-    margin: 5px 0 0;
-    width: 40%;
-    height: 1px;
-    background-color: #fff;
-}
-.footer ul {
-    list-style: none;
-    line-height: 2.2em;
-    padding-left:0px;
-}
-.footer ul a {
-    color:#707070;;
-}
-.footer ul a:hover {
-    color:#274abb;;
-    text-decoration:none;
-}
-/*footer bottom */
-.footer-bottom {
-    padding-top: 5px;
-    padding-bottom: 15px;
-    border-top: 1px solid rgba(0,0,0,0.09);
-    background: #fff;
-    
-}
-.copyright-text p {
-    color: #707070;
-    margin-top: 18px;
-    margin-bottom: 0;
-    font-size:12px;
-}
-
-/* Social Icons */
-
-.social-icons{
-    
-    margin: 0;
-    padding: 0;
-    font-size : 10px;
-}
-
-.social {
-    margin:7px 7px 7px 0px;
-    color:#b40028;
-}
-
-
-#social-fb:hover {
-     color: #3B5998;
-     transition:all .25s;
- }
- #social-tw:hover {
-     color: #4099FF;
-     transition:all .25s;
- }
- #social-gp:hover {
-     color: #d34836;
-     transition:all .25s;
- }
- #social-em:hover {
-     color: #f39c12;
-     transition:all .25s;
- }
- 
- /* CTA CSS */
- .cta-padding35 {
-    padding: 35px 0 35px;
-    background-color: #b40028;
-    color:#fff;
-}
-/* Buttons */
-.site-btn {
-    font-size: 14px;
-    padding: 13px 30px;
-    border-radius: 5px;
-    border: 1px solid #b40028 ;
-    min-width: 200px;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    color: #b40028 ;
-    background-color:transparent;
-    transition: all .25s ease-in-out;
-    margin: 10px 0px 10px 0px;
-    
-}
-.site-btn:hover {
-    background: #b40028 ;
-    border: 1px solid #fff;
-    font-weight:700px;
-    
-    
-}
- 
-
-
-/* Navigation */
-.navbar-default {
-  background-color: #011034;
-  border-color: #011034;
-  padding: 10px 0px 10px 0;
-  letter-spacing:1px;
-  font-weight:800;
-  text-transform: uppercase;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-    -ms-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-    -o-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-}
-.navbar-default {
-  background-color: #011034;
-  border-color: #011034;
-}
-.navbar-default .navbar-brand {
-  color: #ffffff;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #b40028;
-}
-.navbar-default .navbar-text {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #b40028;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #011034;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #b40028;
-  background-color: #011034;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #011034;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #b40028;
-  background-color: #011034;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #b40028;
-  background-color: #011034;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #b40028;
-  background-color: #011034;
-}
-.navbar-default .navbar-toggle {
-  border-color: #011034;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #011034;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-  color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-  color: #b40028;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #b40028;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #b40028;
-    background-color: #011034;
-  }
-}
-
+  /*About area*/
+  .about-shadow{position: absolute;bottom: 100%;height: 300px;width: 100%;left: 0;z-index: 20;background: linear-gradient(to top, #000000, transparent);}
+  .about-section{width: 100%;background-color: black;position: relative;} 
+  .about-section .about-container{padding: 3rem;display: grid;grid-template-columns: repeat(2, 1fr);align-items: center;justify-content: center;min-height: 100vh;}
+  .about-section .about-container >*{margin: 2rem;padding-bottom: 30%;padding-top: 30%;}
+  .about-section img{width: 100%;}
+  .about-content{font-size: 20px;color: white;transform: translateY(-50px); }
+  .about-title{font-weight: 600;font-size: 50px;margin-bottom: 1rem;padding-bottom: .5rem;position: relative;}
+  .about-border{position: absolute;width: 30%;height: 3px;background-color: white;bottom: 0;left: 0;}
+  
+  /*Services area*/
+  .site-main .services-area{position: relative; padding: 7rem 2rem;}
+  .site-main .services-area .services-title{padding: 0 14rem;}
+  .site-main .services-area .services-title h1{font-size: 50px;}
+  .site-main> .services-area .services{background: rgba(8, 91, 138, 0.2);padding: 5rem 0;width: 35rem;margin: 2rem 2rem;
+  transition: box-shadow .7s ease;}
+  .site-main> .services-area .services:hover{box-shadow: inset 0 0 10px #000000;}
+  
+  /*Function*/
+  .opacity{opacity: 0;}
 </style>
+
 {% endblock %}
+
 
 {% block content %}
+<!--===================================================Header area==================================================================-->
+    <header >
+      <div >
+        <h1 class="header-title translate" data-speed="0.1">Mobile Auto Detailing</h1>
+        <h5 class='header-small-title translate'data-speed="0.1">Professional Vehicle Detailing <br>At Your Doorstep </h5>
+      </div>
+      <div>
+        <img class="header-images" alt="">
+      </div>      
+    </header>
 
-<div class="image-aboutus-banner"style="">
-   <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-         <h1 class="lg-text">About Us</h1>
-         <p class="image-aboutus-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-       </div>
-    </div>
-</div>
-</div>
-<div class="container paddingTB60">
-	<div class="row">
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
-                 <hr>
-                <h2>Good codebase and in-built powerful standards</h2>
-                <hr>
-                <!-- Preview Image -->
-                <img class="img-responsive" src="http://mobilebusinessinsights.com/wp-content/uploads/2016/03/IBM_MobileFirst_SXSWBlog_0321_v2.jpg" alt="">
-                <hr>
-                <!-- Post Content -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
-                <hr>
-            </div>
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-                <!-- Blog Search Well -->
-                <div class="well bgcolor-skyblue">
-                    <h4>Blog Search</h4>
-                    <div class="input-group">
-                        <input class="form-control" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                    <!-- /.input-group -->
-                </div>
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Quick Links</h4>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-
-                <!-- Side Widget Well -->
-                <div class="well bgcolor-skyblue">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                </div>
-
-            </div>
-
+<!--===================================================About area==================================================================-->
+    <section class="about-section">
+      <div class="about-shadow"></div>
+      <div class="about-container mt-0">
+        <div class="about-content opacity">         
+          <h3 class="about-title">
+            Who we are
+            <div class="about-border"></div>
+          </h3>
+          <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero ratione impedit voluptas adipisci blanditiis quia voluptate explicabo. Culpa dolorum molestiae adipisci tempore unde dolor. Provident doloremque quod voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, repellendus hic placeat ab voluptate in earum ducimus vitae, praesentium illum, quas expedita. Id quidem cum esse, voluptatibus optio cumque accusamus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
         </div>
-</div>
+        <div>
+          <img src="{% static 'img/118817975_3334981509874669_770669014545500534_n.jpeg' %}" alt="">
+        </div>
+      </div>
+    </section>
 
+<!--===================================================Services area==================================================================-->
+  <main class="site-main" >   
+    <section class="services-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center services-title">
+              <h1 class="text-uppercase title-text">Services</h1>
+              <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam sequi iure, itaque assumenda temporibus aliquid quod debitis error numquam illum velit illo ipsa dolorem quam iusto ullam id consectetur.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid services-list">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="services">               
+                <div class="card-body text-center">
+                  <h3 class="card-title text-uppercase font-roboto">3-Layer Ceramic Coating</h3>
+                  
+                  <p class="card-text text-secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid nemo tempora deserunt voluptas temporibus unde magnam eum assumenda placeat, sequi soluta quos similique, at dicta quam mollitia! Hic, vel?
+                  </p>
+                  <a href="#!" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="services">
+                <div class="card-body text-center">
+                  <h3 class="card-title text-uppercase font-roboto">3-Step Polishing</h3>
+                  <a href="#!" class="btn btn-primary">Learn More</a>
+                  <p class="card-text text-secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid nemo tempora deserunt voluptas
+                    temporibus unde magnam eum assumenda placeat, sequi soluta quos similique, at dicta quam mollitia! Hic, vel?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="services">
+                <div class="card-body text-center">
+                  <h3 class="card-title text-uppercase font-roboto">Engine Coating</h3>
+                  <p class="card-text text-secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid nemo tempora deserunt voluptas
+                    temporibus unde magnam eum assumenda placeat, sequi soluta quos similique, at dicta quam mollitia! Hic, vel?
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+              <div class="row">
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                  <div class="services">
+                    <div class="card-body text-center">
+                      <h3 class="card-title text-uppercase font-roboto">WindScreen Coating</h3>
+                      <p class="card-text text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid nemo tempora deserunt voluptas
+                        temporibus unde magnam eum assumenda placeat, sequi soluta quos similique, at dicta quam mollitia! Hic, vel?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                  <div class="services">
+                    <div class="card-body text-center">
+                      <h3 class="card-title text-uppercase font-roboto">Head lamp coating</h3>
+                      <p class="card-text text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid nemo tempora deserunt voluptas
+                        temporibus unde magnam eum assumenda placeat, sequi soluta quos similique, at dicta quam mollitia! Hic, vel?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                  <div class="services">
+                    <div class="card-body text-center">
+                      <h3 class="card-title text-uppercase font-roboto">Rim Coating</h3>
+                      <p class="card-text text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid nemo tempora deserunt voluptas
+                        temporibus unde magnam eum assumenda placeat, sequi soluta quos similique, at dicta quam mollitia! Hic, vel?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+        </div>
+      </section>
+  </main>
 {% endblock %}
+
+
+<!--===================================================Java Script==================================================================-->
+{% block extra_scripts %}
+<script>
+  const translate = document.querySelectorAll(".translate");
+  const header_title = document.querySelector(".header-title");
+  const header_small_title = document.querySelector(".header-small-title");
+  const header = document.querySelector("header");
+  const about_shadow = document.querySelector(".about-shadow");
+  const about_section = document.querySelector(".about-section");  
+  const opacity = document.querySelectorAll(".opacity");
+  const about_border = document.querySelector(".about-border");
+  let header_height = header.offsetHeight;
+  let about_section_height = about_section.offsetHeight;
+
+  window.addEventListener('scroll', () => {
+    let scroll = window.pageYOffset;
+    let about_sectionY = about_section.getBoundingClientRect();
+
+    translate.forEach(element => {
+      let speed = element.dataset.speed;
+      element.style.transform = `translateY(${scroll * speed}px)`;
+    })
+
+    opacity.forEach(element => {
+      element.style.opacity = scroll / (about_sectionY.top + about_section_height);
+    })
+
+    header_title.style.opacity = -scroll / (header_height / 2) + 1;
+    header_small_title.style.opacity = -scroll / (header_height / 2) + 1;
+    about_shadow.style.height = `${scroll * 0.5 + 300}px`;
+    about_border.style.width = `${scroll / (about_sectionY.top + about_section_height) * 30}%`;   
+  })
+</script>
+
+{% endblock extra_scripts %}
