@@ -26,15 +26,14 @@
       }
 
       .navbar-brand {
-        font-size: 1.75rem;
+        font-weight: 600;
         letter-spacing: 3px;
       }
       .navbar{
         background-color: black;
       }
       .navbar .navbar-nav  .nav-item .nav-link{
-        color: white;
-        font-size: 20px;
+        color: white;     
         font-weight: 400;       
       }
       .navbar .navbar-nav .nav-item .nav-link:hover{
@@ -86,7 +85,9 @@
         <li class="nav-item">
           <a class="nav-link ml-3" href="{% url 'core:our_work' %}" target="_blank">Our Work</a>
         </li>
-        <!--add shop here-->
+        <!-- <li class="nav-item">
+          <a class="nav-link ml-3" href="{% url 'core:shop' %}" target="_blank">Shop</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link ml-3" href="{% url 'core:contact' %}" target="_blank">Contact</a>
         </li>
@@ -96,11 +97,11 @@
         <ul class="navbar-nav list-inline">
           {% if request.user.is_authenticated %}
           <!-- Icons -->
-          <li class="">
+          <!-- <li class="">
             <a class="nav-link-right" href='/order_summary' rel="nofollow" target="_blank">
               <i class="fas fa-shopping-cart"></i>
             </a>
-          </li>
+          </li> -->
           <li class="">
             <a class="nav-link-right" href="{% url 'account_logout' %}">
               <span class="badge red z-depth-1 mr-1"> Hello, {{ request.user }} </span>
@@ -108,11 +109,11 @@
             </a>
           </li>
           {% else %}
-          <li class="">
+          <!-- <li class="">
             <a class="nav-link-right" href='/order_summary' rel="nofollow" target="_blank">
               <i class="fas fa-shopping-cart"></i>
             </a>
-          </li>
+          </li> -->
           <li class="">
             <a class="nav-link-right"  href="/login">
               <i class="" >Sign In</i>
