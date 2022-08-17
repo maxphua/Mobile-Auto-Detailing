@@ -40,26 +40,10 @@ heroku
 sqlite
 
 
-#What i learn
-
-model view controller (MVC) architecture
-
-Django class based view
-
-relational database ("Model")
-
-web templating system ("View")
-
-regular-expression-based URL dispatcher ("Controller")
-
-Object-Relational mapper(ORM), data model
-
-
 #Credits
 
 Tutorial from JustDjango from youtube
 
-https://www.youtube.com/watch?v=YZvRrldjf1Y&t=6406s
 
 
 #How to Install and Run the Project
@@ -81,15 +65,4 @@ python manage.py runserver
 
 
 
-What was your motivation?
-Why did you build this project?
-What problem does it solve?
-What did you learn?
-What makes your project stand out?
-If your project has a lot of features, consider adding a "Features" section and listing them here.
-What your application does,
-Why you used the technologies you used,
-Some of the challenges you faced and features you hope to implement in the future.
-Add a License
-It lets other developers know what they can and cannot do with your project.
-Include Tests
+
